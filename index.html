@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Happy Birthday 💖</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Lock screen: shown first, blocks the surprise from randoms who find the link -->
+  <div id="lock-screen">
+    <div class="glass-card">
+      <p class="eyebrow">private & just for you</p>
+      <h1 class="script-title">Locked 🔒</h1>
+      <p class="tagline">enter the passcode to open</p>
+      <input type="password" id="lock-input" class="lock-input" placeholder="passcode" autocomplete="off" />
+      <button class="btn glow-btn" id="lock-submit">Unlock 💗</button>
+      <p class="lock-error hidden" id="lock-error">that's not it... try again 🥺</p>
+    </div>
+  </div>
+
+  <!-- Ambient floating hearts, always running in background -->
+  <div id="ambient-hearts" aria-hidden="true"></div>
+
+  <!-- Progress dots -->
+  <div id="progress-dots" aria-hidden="true"></div>
+
+  <!-- SCENE 0: Intro -->
+  <section class="scene active" id="scene-intro">
+    <div class="intro-glow"></div>
+    <div class="glass-card">
+      <p class="eyebrow">A little something for</p>
+      <h1 class="script-title" id="name-title">Kanna</h1>
+      <p class="tagline">tap to open your surprise</p>
+      <button class="btn glow-btn" id="btn-intro">💌 Open</button>
+    </div>
+  </section>
+
+  <!-- SCENE 1: Funny sticker tease -->
+  <section class="scene" id="scene-sticker">
+    <div class="sticker" id="kid-sticker">🧒😜</div>
+    <p class="big-line" id="sticker-line-1">I made something for you...</p>
+    <p class="big-line hidden" id="sticker-line-2">Are you excited?? 👀</p>
+    <button class="btn" id="btn-sticker-1">Show me 👉</button>
+    <button class="btn hidden" id="btn-sticker-2">Yesss!! 😍</button>
+  </section>
+
+  <!-- SCENE 2: Flower burst greeting -->
+  <section class="scene" id="scene-greeting">
+    <div class="burst-origin" id="flower-burst"></div>
+    <div class="glass-card">
+      <h1 class="script-title big-title">Happiest Birthday<br><span id="name-title-2">Kanna</span> 🎉</h1>
+      <p class="pranam-line">Nuvvu naa pranam 💗</p>
+      <p class="big-line">I will cherish you for my whole life.</p>
+      <p class="tagline">and here's a little gift for you...</p>
+      <p class="tagline">click to unwrap 🎁</p>
+      <button class="btn glow-btn" id="btn-greeting">Continue</button>
+    </div>
+  </section>
+
+  <!-- SCENE 3: Gift -> Heart -> Arrow -> Wish -->
+  <section class="scene" id="scene-gift">
+
+    <div class="gift-wrap" id="gift-wrap">
+      <div class="gift-box" id="gift-box">
+        <div class="gift-lid"></div>
+        <div class="gift-body"></div>
+        <div class="gift-ribbon-v"></div>
+        <div class="gift-ribbon-h"></div>
+      </div>
+      <p class="tagline glass-pill" id="gift-hint">click the gift to unwrap</p>
+    </div>
+
+    <div class="heart-arrow-stage glass-card hidden" id="heart-arrow-stage">
+      <div class="floating-heart-target" id="heart-target">❤️</div>
+      <button class="bow-btn" id="bow-btn" aria-label="shoot bow">🏹</button>
+      <p class="tagline">tap the bow to shoot the heart</p>
+    </div>
+
+    <div class="wish-block glass-card hidden" id="wish-block">
+      <p class="big-line">Make a wish 🌠</p>
+      <button class="btn glow-btn" id="btn-wish">I made a wish ✨</button>
+    </div>
+  </section>
+
+  <!-- SCENE 4: Tree of hearts -->
+  <section class="scene" id="scene-tree">
+    <div class="tree-wrap">
+      <div class="tree-trunk" id="tree-trunk"></div>
+      <div class="tree-foliage" id="tree-foliage"></div>
+    </div>
+    <div class="glass-card fade-msg hidden" id="tree-message-wrap">
+      <p class="big-line" id="tree-message">Every year, all your dreams and wishes will come true.<br>Be happy always, my pranam. 💖</p>
+      <button class="btn glow-btn" id="btn-tree">Continue</button>
+    </div>
+  </section>
+
+  <!-- SCENE 5: Bake cake / chocolates / flowers -->
+  <section class="scene" id="scene-bake">
+    <div class="bake-stage">
+      <div class="cake" id="cake">🎂</div>
+      <div class="steam-layer" id="steam-layer"></div>
+      <div class="fall-layer" id="fall-layer"></div>
+      <div class="bloom-layer" id="bloom-layer"></div>
+    </div>
+    <div class="glass-card fade-msg hidden" id="bake-message-wrap">
+      <p class="big-line" id="bake-message">I love you, always. 🤎🍫🌸</p>
+      <button class="btn glow-btn" id="btn-bake">Continue</button>
+    </div>
+  </section>
+
+  <!-- SCENE 6: Balloons with reasons -->
+  <section class="scene" id="scene-balloons">
+    <p class="big-line light">Pop a balloon, find a reason 🎈</p>
+    <div class="balloon-field" id="balloon-field"></div>
+    <div class="reason-card hidden" id="reason-card">
+      <div class="reason-card-icon">💌</div>
+      <p class="reason-quote">“</p>
+      <p id="reason-text"></p>
+      <button class="btn small-btn" id="btn-close-reason">close</button>
+    </div>
+    <button class="btn glow-btn hidden" id="btn-balloons">Continue</button>
+  </section>
+
+  <!-- SCENE 7: Memory lane -->
+  <section class="scene" id="scene-memory">
+    <p class="big-line">Walk down memory lane 🥰</p>
+    <div class="memory-gallery" id="memory-gallery"></div>
+    <button class="btn glow-btn" id="btn-memory">One last thing...</button>
+  </section>
+
+  <!-- SCENE 8: Letter -->
+  <section class="scene" id="scene-letter">
+    <div class="letter-paper">
+      <div class="letter-text" id="letter-text"></div>
+      <span class="cursor" id="letter-cursor">|</span>
+    </div>
+    <button class="btn glow-btn hidden" id="btn-letter">💖</button>
+  </section>
+
+  <!-- SCENE 9: Final -->
+  <section class="scene" id="scene-final">
+    <div class="final-hearts" id="final-hearts"></div>
+    <div class="glass-card">
+      <h1 class="script-title big-title">Happy Birthday<br>Kanna 💚</h1>
+      <p class="pranam-line">Nuvvu naa pranam, forever and always. 💗</p>
+      <p class="big-line">Forever yours, always yours.</p>
+      <button class="btn" id="btn-replay">Watch again ↺</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

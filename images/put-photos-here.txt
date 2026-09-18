@@ -1,0 +1,17 @@
+Put your photos here, named exactly:
+
+hero.jpg   -> shown full-screen on the very FIRST page (intro).
+             best pick: a close-up of your hands together (e.g. hers with a
+             Casio watch, his with an Apple Watch) — this is the most
+             personal, authentic option and will look far better than any
+             stock photo.
+1.jpg      -> also reused as a soft backdrop on the letter page
+6.jpg      -> also reused as a soft backdrop on the final page
+2.jpg
+3.jpg
+4.jpg
+5.jpg
+
+(You can add more/fewer memory photos by editing the "memories" list in script.js)
+If a photo is missing, a placeholder / stock-photo fallback is shown automatically,
+so you can still preview everything before adding your real photos.
