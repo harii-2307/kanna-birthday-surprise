@@ -1,3 +1,6 @@
 .DS_Store
 Screenshot *.png
 ChatGPT Image*.png
+# contains the plaintext password + content used to generate VAULT — never publish this
+tools/
+

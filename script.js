@@ -1,69 +1,76 @@
 /* ======================================================================
-   PERSONALIZE EVERYTHING HERE 👇
-   - name        : his name / nickname shown on intro & greeting screens
-   - reasons     : one balloon is created per reason. Keep the LAST one
-                   as the "infinite reasons" line, or edit freely.
-   - memories    : one photo card per entry. Put your images inside the
-                   "images" folder next to this file, named exactly like
-                   the "src" values below (1.jpg, 2.jpg, ...). If an image
-                   is missing, a placeholder card is shown automatically,
-                   so you can preview the site before adding photos.
-   - letter      : the personalised letter, typed out on the last page.
-                   Use \n for a line break / new paragraph.
+   PERSONALIZE EVERYTHING 👇
+   The personal content (name, reasons, memories, letter) is AES-256-GCM
+   encrypted at rest — VAULT below only contains ciphertext, so it can't
+   be read by just viewing this file's source. To change the content,
+   edit tools/encrypt-config.cjs and re-run `node tools/encrypt-config.cjs`,
+   then paste the printed values in here.
    ====================================================================== */
-const CONFIG = {
-  name: "Kanna",
-
-  reasons: [
-    "Your presence makes me alive.",
-    "Your heart gives meaning to my heart.",
-    "You are my world and everything.",
-    "...and a thousand other reasons more, kanna. ♾️"
-  ],
-
-  memories: [
-    { src: "images/1.jpg", caption: "naa pranam" },
-    { src: "images/2.jpg", caption: "my whole world" }
-  ],
-
-  letter: `Hi kannamma,
-
-Wishing you a very happy birthday, be healthy and happy always, i love u so much always forever and ever.
-
-Thanks for being there always, i experienced what true love is from u and i am forever grateful for this, will together cherish every little second of us forever, no matter of all our fights, every second with u is so so special for me.
-
-Forgive me for all the mistakes i did, i love u always kanna.
-
-i love being with u, looking into ur eyes, touching u and playing with u every little thing. as uk seeing u just staring at u and feeling ur presence became my most fav thing in recent days, this can never beat anything.
-
-idk wat even to say, how much ever i express it is always lesss, i love u more n more.
-
-Be happy always, only if u will i will be. take care of ur health. i wish for ur happiness for every second, my heart is with u, take care very much care of it.
-
-A very happy birthday kanna.
-
-- with love,
-your kutty 💗`
+const VAULT = {
+  salt: "9UUqkPvWUcjUm9B8UxOLvg==",
+  iv: "QmGyBS31cEhoSSoU",
+  iterations: 150000,
+  data: "U3fMYNrwudgHkewhCezJDh9K3UW5L7D0iraBpGH62oxkoZCzUHXJqQ1nctulihog3Ktc1gH0In47mf9A66EjIbQLHqRXSUPSDYlDG8dGJFjSWc9kAzeWGICqAA/BxH/qhuvC5uXwz4+iu77xNEF1bbiWg9bWGaG/JVb+I3wP+ofMIeHLAFJw+GNiX++K7PDmSF5pVSFIyreACEg/Zsz7WHxNwDZQAITw7eHUoQ8Bf5Nbus658KnwGTTnI940qZah+hBVtrJRLBRIqAMQAtmwUlprjwDQOUz3WUxmsd1b2jyeF4ATu3bwy+SHPH/96lj5U3Py5hClh+pWC++aFOJ7g6yA6qfgC/m7lnC6eqUUDzd562KNs/ie3srtcOd9RkaKsIgSJ25JsBJE/mo+nYTllOfJFmQkhTliE92kuAOYxafaQBCU/QRgi/wIV+jykPLHMFLkuzVABfyp706Ne3emnJBYSUpCcmsNMTOEYh+KBRhEV2M6VEUtWFFB/4AXlItcpSHo5mnpbveK/0HzrETpwmPYjv5UiCVSVcLbOOlX2FBTK8kkgxJx1mdl8HPUNIA9ITu+LTXzfjT+5ahH/q+AnHbN8/Qiwbzwweticdz31sB4A1X2hXl8YvNd97ibhaCq6Hg+u8wUgLTZvIc5CvCH+LnkRXISjwlwZZE3jCJJ+L+geY9XcQkdqkP3NTNC73tsSDrA3ZfQ7gGZqWl7GlHV1NiHAMTEJD9U2299+9tan9VmDqPkKa+IdoKtNq4/fMVhoMWfY1fxZsjAmGELUqs/d6OifJ4IYlcj4yCRnvX+c4xaaeOIv8yHVNDL2bWGUPaJxPLD4hAWxXPexqx5zGB4GfZuJOFLX59+JlsUm4sbWAITZZtMMKda3n0MtWqYZR9GKkWRnWnp4cewknLHQ1thFSfdTiv5w7KPXtoAzwczC1AUWW/LioeUMh5nXlDWO2369jMTeN/Uf+tRwEdK8HslJCOaDcek1pqXNj04vThqzXc3SxGTNws/0MO98QvCkHbSc7SRZHouXMPpqTnwrEb6fL/QawpjjAF6VC58bPI941pyiItEB6HYzqhkjsV5OO0CnaCkAMfmyXOhUODrCfbdsVbvUUDysVGHOqzpv/T5uZU1M2lktNexMOdV6I3D3rvjZ/g9Am5pb9eRLcbwJdmrLP35eSVTZZpArIMBSeHTNy3Asnk1EjhLMJOfx3goU022ZNnwt4G1kIem9Qjo39RvGQCaYpg5lSNub7WYQfTELGTifQ1aomcIJtR7PT+VlSBkV1uIUXymM2LCgIJ05PyHFTELPUBQjF7iTYtDu3QOmxBWhJog1t5BhHLUTOPj2h6y7ugu0qoExilLSunXZqOQTUBCS/wuq1iiLKvj9iVAuDCbNgqIp/jUmBZAqFxmZqkn9Na8VTg4iQEHI/ztkeIZ7VE2CdVqbl/V2Ybos3T996yrSb0ImpV3clOq1MxTxuLf60ovGK3JwMzEvKH9tb+g16z/1q+9XSncn5GRW1g4+mFauVxmOhjs4m908IGEoGyEgvsSSmM8DVw1dpsgfzKt4eql5cD55eNXfbPOC9Q5wtxBL0lhaiFS6UyGMTHkCQzf6fVqHgDFefmmXt6C802TE7+Ji7o+IVzrC5OnowzIRIxASUi7j8QDRpgctNZUu/v1xjGfNBxgHYTQQyiuhYCBY27/KwQNnfFO55Ci1B10Et1pJl049w+QNe7DZb0Ln5k="
 };
+
+let CONFIG = null;
 
 /* ====================================================================== */
 
-/* ================= Lock screen =================
-   Not real security (it's all client-side, static hosting) — just keeps
-   casual/randoms out since a public link is otherwise guessable. Password
-   is stored as a SHA-256 hash so it isn't sitting in plain text here. */
-const LOCK_PASSWORD_HASH = "b49a71c4c83e72174f553cd8e8278fce4ab27cdc618faf462bf78f939bd169a0";
-const LOCK_STORAGE_KEY = "bday-unlocked";
+/* ================= Lock screen (real encryption, not just hidden UI) =================
+   Not truly "unbreakable" (it's all client-side, static hosting — a
+   determined attacker could still brute-force offline), but unlike a
+   plain hidden div, the personal content is genuinely AES-256-GCM
+   encrypted and only ever decrypted, in-memory, after the correct
+   password is entered. Viewing this file's source only shows ciphertext. */
+const SESSION_KEY_STORAGE = "bday-key";
 
-async function sha256Hex(text){
-  const data = new TextEncoder().encode(text);
-  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
-  return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, "0")).join("");
+function b64ToBytes(b64){
+  return Uint8Array.from(atob(b64), c => c.charCodeAt(0));
 }
 
-if(localStorage.getItem(LOCK_STORAGE_KEY) === "true"){
+async function deriveKey(password, saltBytes){
+  const baseKey = await crypto.subtle.importKey("raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey(
+    { name: "PBKDF2", salt: saltBytes, iterations: VAULT.iterations, hash: "SHA-256" },
+    baseKey,
+    { name: "AES-GCM", length: 256 },
+    true,
+    ["decrypt"]
+  );
+}
+
+async function decryptVault(key){
+  const plaintext = await crypto.subtle.decrypt(
+    { name: "AES-GCM", iv: b64ToBytes(VAULT.iv) },
+    key,
+    b64ToBytes(VAULT.data)
+  );
+  return JSON.parse(new TextDecoder().decode(plaintext));
+}
+
+async function unlockWithKey(key){
+  CONFIG = await decryptVault(key); // throws if the key/password is wrong
+  document.getElementById("name-title").textContent = CONFIG.name;
+  document.getElementById("name-title-2").textContent = CONFIG.name;
   document.getElementById("lock-screen").classList.add("hidden");
-} else {
+  startExperience();
+}
+
+(async function initLock(){
+  // if this tab already unlocked once this session, skip the prompt
+  const cachedKeyB64 = sessionStorage.getItem(SESSION_KEY_STORAGE);
+  if(cachedKeyB64){
+    try {
+      const rawKey = b64ToBytes(cachedKeyB64);
+      const key = await crypto.subtle.importKey("raw", rawKey, "AES-GCM", true, ["decrypt"]);
+      await unlockWithKey(key);
+      return;
+    } catch(e){
+      sessionStorage.removeItem(SESSION_KEY_STORAGE);
+    }
+  }
+
   const lockInput = document.getElementById("lock-input");
   const lockError = document.getElementById("lock-error");
   const lockCard = document.querySelector("#lock-screen .glass-card");
@@ -71,11 +78,12 @@ if(localStorage.getItem(LOCK_STORAGE_KEY) === "true"){
   async function tryUnlock(){
     const value = lockInput.value.trim();
     if(!value) return;
-    const hash = await sha256Hex(value);
-    if(hash === LOCK_PASSWORD_HASH){
-      document.getElementById("lock-screen").classList.add("hidden");
-      localStorage.setItem(LOCK_STORAGE_KEY, "true");
-    } else {
+    try {
+      const key = await deriveKey(value, b64ToBytes(VAULT.salt));
+      await unlockWithKey(key);
+      const rawKey = await crypto.subtle.exportKey("raw", key);
+      sessionStorage.setItem(SESSION_KEY_STORAGE, btoa(String.fromCharCode(...new Uint8Array(rawKey))));
+    } catch(e){
       lockError.classList.remove("hidden");
       lockCard.classList.remove("lock-shake");
       void lockCard.offsetWidth; // restart animation
@@ -89,7 +97,9 @@ if(localStorage.getItem(LOCK_STORAGE_KEY) === "true"){
   lockInput.addEventListener("keydown", (e) => {
     if(e.key === "Enter") tryUnlock();
   });
-}
+})();
+
+function startExperience(){
 
 const scenes = [
   "scene-intro","scene-sticker","scene-greeting","scene-gift",
@@ -526,3 +536,5 @@ const sceneEnterHooks = {
 
 buildProgressDots();
 goToScene("scene-intro");
+
+}
