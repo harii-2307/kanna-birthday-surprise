@@ -7,10 +7,10 @@
    then paste the printed values in here.
    ====================================================================== */
 const VAULT = {
-  salt: "9UUqkPvWUcjUm9B8UxOLvg==",
-  iv: "QmGyBS31cEhoSSoU",
+  salt: "gFZKyjhUrYT2ymLGCt+DJA==",
+  iv: "vbVeWM/kFxk8l6WZ",
   iterations: 150000,
-  data: "U3fMYNrwudgHkewhCezJDh9K3UW5L7D0iraBpGH62oxkoZCzUHXJqQ1nctulihog3Ktc1gH0In47mf9A66EjIbQLHqRXSUPSDYlDG8dGJFjSWc9kAzeWGICqAA/BxH/qhuvC5uXwz4+iu77xNEF1bbiWg9bWGaG/JVb+I3wP+ofMIeHLAFJw+GNiX++K7PDmSF5pVSFIyreACEg/Zsz7WHxNwDZQAITw7eHUoQ8Bf5Nbus658KnwGTTnI940qZah+hBVtrJRLBRIqAMQAtmwUlprjwDQOUz3WUxmsd1b2jyeF4ATu3bwy+SHPH/96lj5U3Py5hClh+pWC++aFOJ7g6yA6qfgC/m7lnC6eqUUDzd562KNs/ie3srtcOd9RkaKsIgSJ25JsBJE/mo+nYTllOfJFmQkhTliE92kuAOYxafaQBCU/QRgi/wIV+jykPLHMFLkuzVABfyp706Ne3emnJBYSUpCcmsNMTOEYh+KBRhEV2M6VEUtWFFB/4AXlItcpSHo5mnpbveK/0HzrETpwmPYjv5UiCVSVcLbOOlX2FBTK8kkgxJx1mdl8HPUNIA9ITu+LTXzfjT+5ahH/q+AnHbN8/Qiwbzwweticdz31sB4A1X2hXl8YvNd97ibhaCq6Hg+u8wUgLTZvIc5CvCH+LnkRXISjwlwZZE3jCJJ+L+geY9XcQkdqkP3NTNC73tsSDrA3ZfQ7gGZqWl7GlHV1NiHAMTEJD9U2299+9tan9VmDqPkKa+IdoKtNq4/fMVhoMWfY1fxZsjAmGELUqs/d6OifJ4IYlcj4yCRnvX+c4xaaeOIv8yHVNDL2bWGUPaJxPLD4hAWxXPexqx5zGB4GfZuJOFLX59+JlsUm4sbWAITZZtMMKda3n0MtWqYZR9GKkWRnWnp4cewknLHQ1thFSfdTiv5w7KPXtoAzwczC1AUWW/LioeUMh5nXlDWO2369jMTeN/Uf+tRwEdK8HslJCOaDcek1pqXNj04vThqzXc3SxGTNws/0MO98QvCkHbSc7SRZHouXMPpqTnwrEb6fL/QawpjjAF6VC58bPI941pyiItEB6HYzqhkjsV5OO0CnaCkAMfmyXOhUODrCfbdsVbvUUDysVGHOqzpv/T5uZU1M2lktNexMOdV6I3D3rvjZ/g9Am5pb9eRLcbwJdmrLP35eSVTZZpArIMBSeHTNy3Asnk1EjhLMJOfx3goU022ZNnwt4G1kIem9Qjo39RvGQCaYpg5lSNub7WYQfTELGTifQ1aomcIJtR7PT+VlSBkV1uIUXymM2LCgIJ05PyHFTELPUBQjF7iTYtDu3QOmxBWhJog1t5BhHLUTOPj2h6y7ugu0qoExilLSunXZqOQTUBCS/wuq1iiLKvj9iVAuDCbNgqIp/jUmBZAqFxmZqkn9Na8VTg4iQEHI/ztkeIZ7VE2CdVqbl/V2Ybos3T996yrSb0ImpV3clOq1MxTxuLf60ovGK3JwMzEvKH9tb+g16z/1q+9XSncn5GRW1g4+mFauVxmOhjs4m908IGEoGyEgvsSSmM8DVw1dpsgfzKt4eql5cD55eNXfbPOC9Q5wtxBL0lhaiFS6UyGMTHkCQzf6fVqHgDFefmmXt6C802TE7+Ji7o+IVzrC5OnowzIRIxASUi7j8QDRpgctNZUu/v1xjGfNBxgHYTQQyiuhYCBY27/KwQNnfFO55Ci1B10Et1pJl049w+QNe7DZb0Ln5k="
+  data: "0xt2DoKN8iYjr14n93sI1Ix6ScFjsGgHMCj6EegT8e+bT99DaTz9dRCM45gyg/6UVJxdwbWy9w9bc8aOpRruRsYrjwgO+wvb/nAMURl4Sg8kyf3bEz2EEWwUYSBYgtzfBGxxVqWskoipV+ylilIAg6S5aiwLEnkW9MeapBj0PP6/xWcm9Q1AI0kaXF5krpQlRoXOO5tshpy0kZI9G21osJkoe6qJQWkgWkG0EVncce5GF4tYLnYniTJViJhNCazSQx82m8URKuqK9Tl3y25YgOT47q2ucMWHyco3UBFtNOR0UtI6ldN5p/DyZixiEHoxs5so+RyHcuTqoff3zi8Yp8HlQJ7nVFfFb+FwbA0cubTwTFLTTJKk4gV7u07kME4qHrd9pirnGU4i5IGuzIjDAmRK5TJWu6Wk2ZNmIoo+2Mk3Nut/QsjZS3Q+KTQhSC/Pm3tiffK0I/88b2DkAy5fj9vSooWOB62zFlkig6Z3iWVV0qJTQuNn16/fL4H0gwnqngV5RbTWVAXbJQUu+LpmHRUlKcRKy7Y6DuMPArZSCOs7IPEaDl3PBAJZHc9v1Lqh124L/pugA16lYeNbd4MNolXB20Jw7+Aq8Yz3W7P5f6CXdvgfm2q7cQBaRseUvgfURp7cwprmpqx0I8QJf4wn17FIs+PmRZ1zGdkX35wuBN7O9z2WWSmDKsbHM0d/i5UQEXTsB284HA7uKnavwdm0lh+wKnxoVTu8NJW79kGLKBFfcDDhWMMAQTik6+DkHHkfdIsBtc7sheQFC+Y4GlwPGVDquFzmfrR7kd0WliESDrLTeQuJaey4i1U2N7Qwqd6XBSKldGPayau/bbV2ZQCY4wg9edS/SL+nHdqCsrDGMRnLvJsrs6JMlI78xStdpZNvxP8KAshvRW8mDonuakX7cuuP7iCPB9HQIvFWHn1II6mvKinqxKubUhKiPXcDKy0omhANg68eznTKT/cZYZhtkEv3/XxShdC1qYrTrbAxcd3EqwI284wRRVCg8nUiES3f0HSDErw3ovnx0jySIn6A92f2C0UwaBDlm9eP+AdYNxeiWIqZpBqQ6Pq8IdCPR2jYnBDIttNPVIXOZfC037OCVyn2iOaLcqPAov2TJkkXkcR3EWmieuLpMsuAZMoWM6xA24LNqyi166q3sGwmeyZBZKCDKp4uEht/DMe4KPU2FVyYsiDr87WVjitcsv9SBepIthPvAIbYEZFiIRmG5DVpyp++/ERWOdwJ3wjVWASkOew7rXHsxnbPwXy486TlcFSwcJEOgGfbrUI7gJzqdfYasW3xiDRkfNg585iOMomvPRXq+QBvWRX2ExqaE7QghpTw1MhHkOkPwzHIO7zwK0S9es03x0fLeAyET+uwWUZsMcZKC612KwSxoBl2c2d/NPBpz8ZQomZolBDkfDVoFZGB30DMbdjfWbhOBrBPWZ2nmDEqY68j0RImMUmNEwdv2Ai1tOEJr3aBNLUyv5p++3tTvE2j2A5XuNqvhY2C2v51cFlij2vILw+/WPXQ7dp8sPBaF3Op0U0U2Dr6+UBHGNuplPjxeCiCDRmxvQNb3ZfLNEGtIApkACM095AteAv2ZjYALWvyqL3SgF/SJEJYrF+xWOGD64rvXf63JRcwTqhWlCVVLgwDyXNHn4bx2qSnH+mX"
 };
 
 let CONFIG = null;
@@ -403,7 +403,28 @@ document.getElementById("btn-balloons").addEventListener("click", () => {
 });
 
 /* ================= SCENE: memory lane ================= */
+function spawnMemoryHugs(){
+  const layer = document.getElementById("memory-hugs");
+  layer.innerHTML = "";
+  const emojis = ["🤗","💞","💑","😘","💘","💕"];
+  function drop(){
+    const el = document.createElement("span");
+    el.className = "hug-emoji";
+    el.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+    el.style.left = Math.random()*100 + "%";
+    const duration = 6 + Math.random()*5;
+    el.style.animationDuration = duration + "s";
+    el.style.fontSize = (1.4 + Math.random()*1.2) + "rem";
+    layer.appendChild(el);
+    setTimeout(() => el.remove(), duration*1000);
+  }
+  for(let i=0;i<8;i++) setTimeout(drop, i*250);
+  if(!spawnMemoryHugs.interval){
+    spawnMemoryHugs.interval = setInterval(drop, 500);
+  }
+}
 function buildMemoryGallery(){
+  spawnMemoryHugs();
   const gallery = document.getElementById("memory-gallery");
   gallery.innerHTML = "";
 
@@ -455,7 +476,7 @@ function typeLetter(){
       el.textContent += text.charAt(i);
       i++;
       el.parentElement.scrollTop = el.parentElement.scrollHeight;
-      setTimeout(typeChar, 16);
+      setTimeout(typeChar, 38);
     } else {
       btn.classList.remove("hidden");
     }
@@ -496,6 +517,10 @@ function resetExperience(){
   if(runFinalHearts.interval){
     clearInterval(runFinalHearts.interval);
     runFinalHearts.interval = null;
+  }
+  if(spawnMemoryHugs.interval){
+    clearInterval(spawnMemoryHugs.interval);
+    spawnMemoryHugs.interval = null;
   }
 
   document.getElementById("sticker-line-1").classList.remove("hidden");
